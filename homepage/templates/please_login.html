@@ -5,8 +5,8 @@
 <script>
 
   var client = new steemconnect.Client({
-  app: 'beem.app',
-  callbackURL: 'https://steemrewarding.com/welcome',
+  app: 'steemservice',
+  callbackURL: 'http://www.steemservice.com:8080/welcome',
   scope: ['login']
 });
 
@@ -30,8 +30,8 @@ function LoginKeychain(){
       client.login(params, function(err, token) {
               console.log(err, token)
               if(token){
-                window.location = 'https://steemrewarding.com/welcome?access_token=' + token
-              
+                // window.location = 'https://steemrewarding.com/welcome?access_token=' + token
+                window.location = 'http://www.steemservice.com:8080/welcome?access_token=' + token
               }
       });
         

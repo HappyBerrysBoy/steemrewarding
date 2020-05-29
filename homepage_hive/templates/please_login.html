@@ -6,7 +6,7 @@
 
   var client = new steemconnect.Client({
   app: 'beem.app',
-  callbackURL: 'https://steemrewarding.com/welcome',
+  callbackURL: 'http://localhost:5000/welcome',
   scope: ['login']
 });
 
@@ -19,7 +19,7 @@ var loginURL = client.getLoginURL();
 
 function LoginKeychain(){
         var params = {};
-
+debugger;
         // The "username" parameter is required prior to log in for "Steem Keychain" users.
         if (steemconnect.useSteemKeychain) {
                 var us = $('#keychainUser').val();
@@ -27,13 +27,13 @@ function LoginKeychain(){
                 params = { username: us };
 
         }
-      client.login(params, function(err, token) {
-              console.log(err, token)
-              if(token){
-                window.location = 'https://steemrewarding.com/welcome?access_token=' + token
-              
-              }
-      });
+      // client.login(params, function(err, token) {
+      //         console.log(err, token)
+      //         if(token){
+      //           // window.location = 'https://steemrewarding.com/welcome?access_token=' + token
+      //           window.location = 'http://localhost:5000/welcome?access_token=' + token
+      //         }
+      // });
         
 }
 

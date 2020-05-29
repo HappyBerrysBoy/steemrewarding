@@ -78,7 +78,8 @@ CORS(app)
 stm = Steem()
 nodelist = NodeList()
 
-steemconnect = SteemConnect(client_id="beem.app", scope="login", get_refresh_token=False)
+# steemconnect = SteemConnect(client_id="beem.app", scope="login", get_refresh_token=False)
+steemconnect = SteemConnect(client_id="steemservice", scope="login", get_refresh_token=False)
 
 
 # print(config_data)

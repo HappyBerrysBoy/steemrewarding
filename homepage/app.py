@@ -78,7 +78,8 @@ CORS(app)
 stm = Steem()
 nodelist = NodeList()
 
-steemconnect = SteemConnect(client_id="beem.app", scope="login", get_refresh_token=False)
+# steemconnect = SteemConnect(client_id="beem.app", scope="login", get_refresh_token=False)
+steemconnect = SteemConnect(client_id="steemservice", scope="login", get_refresh_token=False)
 
 
 # print(config_data)
@@ -1914,4 +1915,4 @@ def delete_vote():
     return redirect('show_pending_votes')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
