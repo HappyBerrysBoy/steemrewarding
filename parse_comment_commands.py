@@ -54,7 +54,7 @@ if __name__ == "__main__":
     pendingVotesTrx = PendingVotesTrx(db)
     
     conf_setup = confStorage.get()
-    rewarding_account = "rewarding"
+    rewarding_account = "steemservice"
     last_command = conf_setup["last_command"]
     if last_command is None:
         last_command = datetime(1970,1,1,0,0,0)
@@ -152,7 +152,7 @@ if __name__ == "__main__":
                                  "vp_reached_order": 1, "max_net_votes": -1, "max_pending_payout": -1, "exclude_declined_payout": False,
                                  "max_votes_per_day": -1, "max_votes_per_week": -1, "vp_scaler": 0, "leave_comment": False})
         elif not posting_auth:
-            c_comment.reply("Please give rewarding the posting authory for letting it upvote on your command. https://app.steemconnect.com/authorize/@rewarding", author=rewarding_account)         
+            c_comment.reply("Please give rewarding the posting authory for letting it upvote on your command. https://app.steemconnect.com/authorize/@steemservice", author=rewarding_account)
 
     confStorage.update({"last_command": last_command})
     print("command parse script run %.2f s" % (time.time() - start_prep_time))
